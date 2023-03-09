@@ -1,0 +1,10 @@
+[package]
+name = "dalvikdex"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+adler32 = "1.2.0"
+rust-crypto = "0.2.36"
+dalvikcommon = { path = "../dalvikcommon" }
+dalvikinst = { path = "../dalvikinst" }

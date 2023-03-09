@@ -1,0 +1,9 @@
+[package]
+name = "dalvikvm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dalvikdex = { path = "../dalvikdex" }
+dalvikcommon = { path = "../dalvikcommon" }
+dalvikinst = { path = "../dalvikinst" }
