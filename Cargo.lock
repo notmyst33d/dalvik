@@ -14,6 +14,7 @@ version = "0.1.0"
 dependencies = [
  "dalvikcommon",
  "dalvikdex",
+ "dalvikruntime",
  "dalvikvm",
 ]
 
@@ -36,6 +37,13 @@ name = "dalvikinst"
 version = "0.1.0"
 dependencies = [
  "dalvikcommon",
+]
+
+[[package]]
+name = "dalvikruntime"
+version = "0.1.0"
+dependencies = [
+ "dalvikvm",
 ]
 
 [[package]]

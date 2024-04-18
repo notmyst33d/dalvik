@@ -2,6 +2,7 @@ use std::{env, fs};
 
 use dalvikdex::Dex;
 use dalvikvm::DalvikVm;
+use dalvikruntime::register_classes;
 
 const CHUNK_SIZE: usize = 4096;
 
@@ -13,8 +14,9 @@ fn main() {
         Err(error) => panic!("Cannot create Dex: {error}"),
     };
 
-    println!("{:#?}", dex);
     let mut vm = DalvikVm::new(dex);
+    register_classes(&mut vm);
+
     match vm.run() {
         Ok(_) => {},
         Err(error) => panic!("VM returned an error: {error}"),

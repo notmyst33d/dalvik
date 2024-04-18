@@ -7,3 +7,4 @@ edition = "2021"
 dalvikcommon = { path = "dalvikcommon" }
 dalvikdex = { path = "dalvikdex" }
 dalvikvm = { path = "dalvikvm" }
+dalvikruntime = { path = "dalvikruntime" }
