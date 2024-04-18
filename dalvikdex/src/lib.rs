@@ -6,3 +6,6 @@ pub mod dex_field_id;
 pub mod dex_method;
 pub mod dex_method_id;
 pub mod dex_proto_id;
+
+pub use dex::Dex;
+pub use dex_method::DexMethod;

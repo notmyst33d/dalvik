@@ -1,16 +1,15 @@
-use std::{io::Read, io::Result};
+use crate::{DalvikCommonError, BytesBuffer};
 
 pub struct LEB128;
 
 impl LEB128 {
-    pub fn read_uleb128<R: Read>(reader: &mut R) -> Result<u128> {
-        let mut byte: [u8; 1] = [0; 1];
+    pub fn read_uleb128(buffer: &mut BytesBuffer) -> Result<u128, DalvikCommonError> {
         let mut value: u128 = 0;
 
         for increment in 0..16 {
-            reader.read(&mut byte)?;
-            value |= ((byte[0] & 0x7F) as u128) << increment * 7;
-            if byte[0] < 0x7F {
+            let byte = buffer.read_u8()?;
+            value |= ((byte & 0x7F) as u128) << increment * 7;
+            if byte < 0x7F {
                 break;
             }
         }

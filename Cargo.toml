@@ -7,14 +7,3 @@ edition = "2021"
 dalvikcommon = { path = "dalvikcommon" }
 dalvikdex = { path = "dalvikdex" }
 dalvikvm = { path = "dalvikvm" }
-
-[profile.release]
-codegen-units = 1
-opt-level = "z"
-strip = "symbols"
-lto = "fat"
-panic = "abort"
-
-[profile.release.build-override]
-codegen-units = 1
-opt-level = "z"
